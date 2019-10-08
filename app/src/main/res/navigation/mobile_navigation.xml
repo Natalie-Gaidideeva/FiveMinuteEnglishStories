@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/tab1All">
+
+    <fragment
+        android:id="@+id/tab3Genres"
+        android:name="com.ngaid.fiveminenglishstories.tabs.Tab3Genres"
+        tools:layout="@layout/tabs_layout" >
+        <action
+            android:id="@+id/action_tab3Genres_to_book"
+            app:destination="@id/book" />
+    </fragment>
+    <fragment
+        android:id="@+id/tab1All"
+        android:name="com.ngaid.fiveminenglishstories.tabs.Tab1All"
+        tools:layout="@layout/tabs_layout" >
+        <action
+            android:id="@+id/action_tab1All_to_tab2Authors"
+            app:destination="@id/tab2Authors" />
+        <action
+            android:id="@+id/action_tab1All_to_book"
+            app:destination="@id/book" />
+    </fragment>
+    <fragment
+        android:id="@+id/tab2Authors"
+        android:name="com.ngaid.fiveminenglishstories.tabs.Tab2Authors"
+        tools:layout="@layout/tabs_layout" >
+        <action
+            android:id="@+id/action_tab2Authors_to_tab3Genres"
+            app:destination="@id/tab3Genres" />
+        <action
+            android:id="@+id/action_tab2Authors_to_book"
+            app:destination="@id/book" />
+    </fragment>
+    <activity
+        android:id="@+id/book"
+        android:name="com.ngaid.fiveminenglishstories.Book"
+        tools:layout="@layout/book_layout" />
+    <fragment
+        android:id="@+id/fragmentTextType"
+        android:name="com.ngaid.fiveminenglishstories.menuItems.FragmentTextType"
+        android:label="FragmentTextType" />
+    <fragment
+        android:id="@+id/fragmentTextSize"
+        android:name="com.ngaid.fiveminenglishstories.menuItems.FragmentTextSize"
+        android:label="FragmentTextSize" />
+    <fragment
+        android:id="@+id/fragmentDeveloper"
+        android:name="com.ngaid.fiveminenglishstories.menuItems.FragmentDeveloper"
+        android:label="FragmentDeveloper" />
+</navigation>

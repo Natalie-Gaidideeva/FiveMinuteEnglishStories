@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="none"
+        android:id="@+id/group1">
+        <item android:id="@+id/menu_item_one"
+            android:title="@string/menu_text_random" />
+    </group>
+    <group android:checkableBehavior="none"
+        android:id="@+id/group2">
+        <item android:id="@+id/menu_item_two"
+            android:title="@string/menu_text_mode"
+            android:icon="@drawable/ic_mode"/>
+        <item android:id="@+id/menu_item_three"
+            android:title="@string/menu_text_font"
+            android:icon="@drawable/ic_font"/>
+        <item android:id="@+id/menu_item_four"
+            android:icon="@drawable/ic_size"
+            android:title="@string/menu_text_size" />
+    </group>
+    <group android:checkableBehavior="none"
+    android:id="@+id/group3">
+        <item android:id="@+id/menu_item_five"
+            android:title="@string/menu_text_dev" />
+    </group>
+</menu>

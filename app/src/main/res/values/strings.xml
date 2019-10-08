@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">5-minute Stories</string>
+    <string-array name="tabNames">
+        <item>ALL</item>
+        <item>AUTHORS</item>
+        <item>GENRES</item>
+    </string-array>
+    <string name="navigation_drawer_open">Drawer opened</string>
+    <string name="navigation_drawer_close">Drawer closed</string>
+    <string name="menu_text_random">Read random story</string>
+    <string name="menu_text_mode">Day/night mode</string>
+    <string name="menu_text_size">Font size</string>
+    <string name="menu_text_font">Font face</string>
+    <string name="menu_text_dev">Information about developer</string>
+    <string name="back">Back button</string>
+    <string name="com_ngaid_fiveminenglishstories_preference">nightMode</string>
+    <string name="coordinatorColour">coordinatorColour</string>
+    <string name="textColour">textColour</string>
+    <string name="booleanSwitch">booleanSwitch</string>
+    <string name="font_name">font_name</string>
+    <string name="font_size">font_size</string>
+    <string name="dialog1">Choose font face</string>
+    <string name="dialog2">Choose font size</string>
+    <string name="dialog3">About 5-minute Stories</string>
+    <string name="devName">Developer: NGaid.</string>
+    <string name="contact">CONTACT THE DEVELOPER</string>
+    <string-array name="fonts">
+        <item>Droid Serif</item>
+        <item>Montserrat</item>
+        <item>Open Sans</item>
+        <item>Roboto Condensed</item>
+    </string-array>
+    <string-array name="sizes">
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+    </string-array>
+</resources>
