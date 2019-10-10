@@ -4,7 +4,7 @@
 - Day / Night mode  
 ![Night Mode](https://a.radikal.ru/a43/1910/b3/8492777d64c4.jpg) ![Day Mode](https://a.radikal.ru/a23/1910/12/884356ffdf3f.jpg)
 - Order by Update / Authors / Genres  
-![Update Order](https://b.radikal.ru/b15/1910/b0/f6d6e4efd1e0.jpg) ![Authors Order](https://b.radikal.ru/b31/1910/ec/407cfbf7ce9b.jpg) ![Genres Order](https://a.radikal.ru/a36/1910/f4/3a6b61567130.jpg)
+![Update Order](https://d.radikal.ru/d24/1910/61/3c35ce51e9be.jpg) ![Authors Order](https://d.radikal.ru/d05/1910/df/7f2282614d64.jpg) ![Genres Order](https://d.radikal.ru/d18/1910/9b/78157a89a72d.jpg)
 - Random Story Option
 - Custom Fonts
 - Custom Text Size
