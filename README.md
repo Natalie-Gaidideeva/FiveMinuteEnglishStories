@@ -11,7 +11,7 @@
 - Custom Fonts
 - Custom Text Size
 - Portrait / Landscape
-##Built With
+## Built With
 [Google Firebase](https://firebase.google.com)'s Cloud Firestore
-##About Author
+## About Author
 [NGaid](https://github.com/Natalie-Gaidideeva)
