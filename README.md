@@ -11,5 +11,3 @@
 - Portrait / Landscape
 ## Built With
 [Google Firebase](https://firebase.google.com)'s Cloud Firestore
-## About Author
-[NGaid](https://github.com/Natalie-Gaidideeva)
