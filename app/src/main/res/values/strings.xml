@@ -23,7 +23,7 @@
     <string name="dialog2">Choose font size</string>
     <string name="dialog3">About 5-minute Stories</string>
     <string name="devName">Developer: NGaid.</string>
-    <string name="contact">CONTACT THE DEVELOPER</string>
+    <string name="contact">CONTACT</string>
     <string-array name="fonts">
         <item>Droid Serif</item>
         <item>Montserrat</item>

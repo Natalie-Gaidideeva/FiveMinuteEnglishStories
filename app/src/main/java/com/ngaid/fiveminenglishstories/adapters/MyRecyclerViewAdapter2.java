@@ -67,7 +67,7 @@ public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewA
                 textView.setBackgroundResource(backValue.resourceId);
 
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                layoutParams.setMargins(5, 13, 5, 0);
+                layoutParams.setMargins(20, 13, 5, 0);
                 childLayout.addView(textView, layoutParams);
             }
             parentName.setOnClickListener(this);

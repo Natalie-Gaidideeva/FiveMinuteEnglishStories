@@ -3,7 +3,6 @@ package com.ngaid.fiveminenglishstories;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,7 +43,6 @@ public class BaseActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private Context context;
     final String LOG_TAG = "myLogs";
-    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
