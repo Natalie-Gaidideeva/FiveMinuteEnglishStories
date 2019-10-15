@@ -40,6 +40,7 @@ public class Tab2Authors extends Fragment {
                 // use a linear layout manager
                 recyclerView.setLayoutManager(layoutManager);
                 MyRecyclerViewAdapter2 myAdapter = new MyRecyclerViewAdapter2(listA, getContext(), true);
+                myAdapter.notifyDataSetChanged();
                 Log.d(LOG_TAG, "listA " + listA.size());
                 recyclerView.setAdapter(myAdapter);
             }

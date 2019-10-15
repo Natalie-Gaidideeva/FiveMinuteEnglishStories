@@ -63,12 +63,15 @@ public class FireStoreW {
                                 storiesDescriptions.add(storyDescription);
                                 // building collection for expandable lists
                                 if (storiesDescriptions2.size()==0){
-                                    ArrayList<StoriesGS> l = new ArrayList<>();
-                                    l.add(storyDescription);
-                                    ExtendableItem extendableItem = new ExtendableItem(storyDescription.getAuthor(), l);
-                                    ExtendableItem extendableItem1 = new ExtendableItem(storyDescription.getGenre(), l);
+                                    ArrayList<StoriesGS> l1 = new ArrayList<>();
+                                    l1.add(storyDescription);
+                                    ArrayList<StoriesGS> l2 = new ArrayList<>();
+                                    l2.add(storyDescription);
+                                    ExtendableItem extendableItem = new ExtendableItem(storyDescription.getAuthor(), l1);
+                                    ExtendableItem extendableItem1 = new ExtendableItem(storyDescription.getGenre(), l2);
                                     storiesDescriptions2.add(extendableItem);
                                     storiesDescriptions3.add(extendableItem1);
+                                    Log.d(LOG_TAG, "lib!!!1 " + storyDescription.getAuthor() + storyDescription.getTitle());
                                 }
                                 else {
                                     boolean yes = false;
@@ -77,6 +80,7 @@ public class FireStoreW {
                                         if (storyDescription.getAuthor().equals(e.getParent())){
                                             e.getChild().add(storyDescription);
                                             yes = true;
+                                            Log.d(LOG_TAG, "lib!!!2 " + e.getParent() + storyDescription.getTitle());
                                         }
                                     }
                                     if (!yes){
@@ -84,6 +88,7 @@ public class FireStoreW {
                                         l.add(storyDescription);
                                         ExtendableItem extendableItem = new ExtendableItem(storyDescription.getAuthor(), l);
                                         storiesDescriptions2.add(extendableItem);
+                                        Log.d(LOG_TAG, "lib!!!3 " + storyDescription.getAuthor() + storyDescription.getTitle());
                                     }
                                     for (ExtendableItem e : storiesDescriptions3){
                                         if (storyDescription.getGenre().equals(e.getParent())){
@@ -101,6 +106,7 @@ public class FireStoreW {
 
                                 Log.d(LOG_TAG, storyDescription.getTitle() + storyDescription.getFBKey());
                                 Log.d(LOG_TAG, "length:" + storiesDescriptions.size() + storiesDescriptions2.size() + storiesDescriptions3.size());
+                                Log.d(LOG_TAG, "isFromCache: " + document.getMetadata().isFromCache());
                             }
                             firestoreCallback.onCallBack(storiesDescriptions);
                             firestoreCallback.onCallBackA(storiesDescriptions2);

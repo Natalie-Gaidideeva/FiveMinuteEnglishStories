@@ -73,7 +73,6 @@ public class BaseActivity extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(
                 this, drawer, myToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close); //connects drawer with ActionBar
         drawer.addDrawerListener(toggle);
-        toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();  //Synchronize the state of the drawer indicator/affordance with the linked DrawerLayout
 
         NavigationView navigationView = findViewById(R.id.navView);
