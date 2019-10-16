@@ -56,7 +56,6 @@ public class FireStoreW {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot document : task.getResult()) {
-                                //Log.d(LOG_TAG, document.getId() + " => " + document.getData());
                                 StoriesGS storyDescription = new StoriesGS(document.get("title").toString(),
                                         document.get("author").toString(), document.get("genre").toString(),
                                         Integer.parseInt(document.getId()));
