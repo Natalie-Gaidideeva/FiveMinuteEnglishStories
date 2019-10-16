@@ -1,7 +1,6 @@
 package com.ngaid.fiveminenglishstories.tabs;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +20,6 @@ import java.util.List;
 
 public class Tab3Genres extends Fragment {
 
-    final String LOG_TAG = "myLogs";
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,7 +35,6 @@ public class Tab3Genres extends Fragment {
                 // use a linear layout manager
                 recyclerView.setLayoutManager(layoutManager);
                 RecyclerViewAdapterExpandable adapter = new RecyclerViewAdapterExpandable(listB, getContext(), false);
-                Log.d(LOG_TAG, "listB " + listB.size());
                 recyclerView.setAdapter(adapter);
             }
 
