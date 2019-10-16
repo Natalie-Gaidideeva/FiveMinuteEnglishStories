@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1088193116632",
+    "firebase_url": "https://five-min-english-stories.firebaseio.com",
+    "project_id": "five-min-english-stories",
+    "storage_bucket": "five-min-english-stories.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088193116632:android:a3a31440babf143cd45aad",
+        "android_client_info": {
+          "package_name": "com.ngaid.fiveminenglishstories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088193116632-3mdsrbjked315f0cli0ccclqj1dvonru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBivPIvRZt9R5RJnWcQCs9kePZ6YoFYfVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088193116632-3mdsrbjked315f0cli0ccclqj1dvonru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
