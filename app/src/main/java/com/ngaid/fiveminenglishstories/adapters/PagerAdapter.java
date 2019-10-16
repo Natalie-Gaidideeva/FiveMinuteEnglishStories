@@ -11,12 +11,12 @@ import com.ngaid.fiveminenglishstories.tabs.Tab1All;
 import com.ngaid.fiveminenglishstories.tabs.Tab2Authors;
 import com.ngaid.fiveminenglishstories.tabs.Tab3Genres;
 
-public class MyPagerAdapter extends FragmentPagerAdapter {
+public class PagerAdapter extends FragmentPagerAdapter {
     private Context context;
     private String[] tabTitles;
 
 
-    public MyPagerAdapter(FragmentManager fm, Context con) {
+    public PagerAdapter(FragmentManager fm, Context con) {
         super(fm);
         context = con;
     }

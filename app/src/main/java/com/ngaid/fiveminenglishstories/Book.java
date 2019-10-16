@@ -42,8 +42,8 @@ public class Book extends BaseActivity implements View.OnClickListener{
         Log.d(LOG_TAG, "Book: onCreate()");
 
         // setting toolbar with back-arrow
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(myToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         ImageView backArrow = (ImageView) findViewById(R.id.backButton);
         backArrow.setOnClickListener(this);
 
@@ -65,11 +65,11 @@ public class Book extends BaseActivity implements View.OnClickListener{
         setBookSize(PreferencesUtil.getPrefSize(context));
     }
 
-    public static StoriesGS getMyStory() {
+    public static StoriesGS getTheStory() {
         return s;
     }
 
-    public static void setMyStory(StoriesGS st) {
+    public static void setTheStory(StoriesGS st) {
         s = st;
         Log.d(LOG_TAG, "result:" + s.getAuthor());
     }   //setting new story

@@ -23,7 +23,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.ngaid.fiveminenglishstories.adapters.MyPagerAdapter;
+import com.ngaid.fiveminenglishstories.adapters.PagerAdapter;
 import com.ngaid.fiveminenglishstories.menuItems.FragmentDeveloper;
 import com.ngaid.fiveminenglishstories.menuItems.FragmentTextSize;
 import com.ngaid.fiveminenglishstories.menuItems.FragmentTextType;
@@ -52,8 +52,8 @@ public class BaseActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "MainActivity: onCreate()");
 
         //setting toolbar as actionbar and setting title
-        Toolbar myToolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(myToolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle(R.string.app_name);
 
@@ -62,7 +62,7 @@ public class BaseActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         tabLayout.setupWithViewPager(viewPager);
-        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager(), context);
+        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), context);
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(adapter.getCount());
         adapter.notifyDataSetChanged(); // to update data in fragments
@@ -71,12 +71,12 @@ public class BaseActivity extends AppCompatActivity {
         //making menu-drawer with the help of navigationView (contains menu items)
         drawer = findViewById(R.id.drawerLayout);
         toggle = new ActionBarDrawerToggle(
-                this, drawer, myToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close); //connects drawer with ActionBar
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close); //connects drawer with ActionBar
         drawer.addDrawerListener(toggle);
         toggle.syncState();  //Synchronize the state of the drawer indicator/affordance with the linked DrawerLayout
 
         NavigationView navigationView = findViewById(R.id.navView);
-        NavController navController = Navigation.findNavController(this, R.id.my_nav_host_fragment);    //replaces NavHost with drawer
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);    //replaces NavHost with drawer
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.menu_item_one, R.id.menu_item_two, R.id.menu_item_three, R.id.menu_item_four,
                 R.id.menu_item_five).setDrawerLayout(drawer).build();   //connects all element to make drawer
@@ -96,7 +96,7 @@ public class BaseActivity extends AppCompatActivity {
                         FireStoreW.readStory(x, new FireStoreW.FirestoreCallback3(){
                             @Override
                             public void onCallBack3(List<StoriesGS> list) {
-                                Book.setMyStory(list.get(0));
+                                Book.setTheStory(list.get(0));
                                 Intent intent = new Intent(context, Book.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -141,7 +141,7 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {  //handles the back navigation from drawer to activity
-        NavController navController = Navigation.findNavController(this, R.id.my_nav_host_fragment);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }

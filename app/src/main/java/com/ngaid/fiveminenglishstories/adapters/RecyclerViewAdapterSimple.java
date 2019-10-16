@@ -17,20 +17,20 @@ import com.ngaid.fiveminenglishstories.objects.StoriesGS;
 
 import java.util.List;
 
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> implements View.OnClickListener {
+public class RecyclerViewAdapterSimple extends RecyclerView.Adapter<RecyclerViewAdapterSimple.ViewHolder> implements View.OnClickListener {
 
     private List<StoriesGS> allStoriesList;
     private Context context;
     final String LOG_TAG = "myLogs";
 
-    public MyRecyclerViewAdapter(List<StoriesGS> allStoriesList, Context context) {
+    public RecyclerViewAdapterSimple(List<StoriesGS> allStoriesList, Context context) {
         this.allStoriesList = allStoriesList;
         this.context = context;
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView titleView, authorView, genreView;
-        private MyViewHolder(View v) {
+        private ViewHolder(View v) {
             super(v);
             titleView = (TextView) v.findViewById(R.id.tvTitle);
             authorView = (TextView) v.findViewById(R.id.tvAuthor);
@@ -40,17 +40,17 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View item1 = (View) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
 
-        return new MyViewHolder(item1);
+        return new ViewHolder(item1);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         StoriesGS story = allStoriesList.get(position);
         holder.titleView.setText(story.getTitle());
         holder.authorView.setText(story.getAuthor());
@@ -67,7 +67,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         FireStoreW.readStory(view.getId(), new FireStoreW.FirestoreCallback3(){
             @Override
             public void onCallBack3(List<StoriesGS> list) {
-                Book.setMyStory(list.get(0));
+                Book.setTheStory(list.get(0));
                 Intent intent = new Intent(context, Book.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 context.startActivity(intent);

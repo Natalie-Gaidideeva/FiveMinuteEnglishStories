@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ngaid.fiveminenglishstories.FireStoreW;
 import com.ngaid.fiveminenglishstories.R;
-import com.ngaid.fiveminenglishstories.adapters.MyRecyclerViewAdapter2;
+import com.ngaid.fiveminenglishstories.adapters.RecyclerViewAdapterExpandable;
 import com.ngaid.fiveminenglishstories.objects.ExtendableItem;
 import com.ngaid.fiveminenglishstories.objects.StoriesGS;
 
@@ -31,7 +31,7 @@ public class Tab2Authors extends Fragment {
         Log.d(LOG_TAG, "Fragment2 onCreateView");
 
         // setting list from RecView with the help of LayoutManager (measuring and positioning item views within a RecyclerView)
-        final RecyclerView recyclerView = v.findViewById(R.id.my_recycler_view);
+        final RecyclerView recyclerView = v.findViewById(R.id.recycler_view);
         final RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
         FireStoreW.readData(new FireStoreW.FirestoreCallback() {
@@ -39,10 +39,9 @@ public class Tab2Authors extends Fragment {
             public void onCallBackA(ArrayList<ExtendableItem> listA) {
                 // use a linear layout manager
                 recyclerView.setLayoutManager(layoutManager);
-                MyRecyclerViewAdapter2 myAdapter = new MyRecyclerViewAdapter2(listA, getContext(), true);
-                myAdapter.notifyDataSetChanged();
+                RecyclerViewAdapterExpandable adapter = new RecyclerViewAdapterExpandable(listA, getContext(), true);
                 Log.d(LOG_TAG, "listA " + listA.size());
-                recyclerView.setAdapter(myAdapter);
+                recyclerView.setAdapter(adapter);
             }
             public void onCallBack(List<StoriesGS> list){}
             public void onCallBackB(ArrayList<ExtendableItem> listB){}

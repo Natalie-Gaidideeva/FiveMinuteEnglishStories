@@ -23,7 +23,7 @@ import com.ngaid.fiveminenglishstories.objects.StoriesGS;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewAdapter2.MyViewHolder2> implements View.OnClickListener {
+public class RecyclerViewAdapterExpandable extends RecyclerView.Adapter<RecyclerViewAdapterExpandable.ViewHolder2> implements View.OnClickListener {
     // makes tree-list with expandable items
 
     private ArrayList<ExtendableItem> allStoriesList;
@@ -31,17 +31,17 @@ public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewA
     private Context context;
     private boolean ifAuthors;
 
-    public MyRecyclerViewAdapter2(ArrayList<ExtendableItem> allStoriesList, Context context, boolean ifAuthors) {
+    public RecyclerViewAdapterExpandable(ArrayList<ExtendableItem> allStoriesList, Context context, boolean ifAuthors) {
         this.ifAuthors = ifAuthors;
         this.allStoriesList = allStoriesList;
         this.context = context;
     }
 
-    public class MyViewHolder2 extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder2 extends RecyclerView.ViewHolder implements View.OnClickListener {
         private Context context;
         private TextView parentName;
         private LinearLayout childLayout;
-        public MyViewHolder2(View v) {
+        public ViewHolder2(View v) {
             super(v);
             context = itemView.getContext();
             parentName = (TextView) v.findViewById(R.id.parentName);
@@ -86,14 +86,14 @@ public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewA
 
     // Create parent views (invoked by the layout manager)
     @Override
-    public MyViewHolder2 onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder2 onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_extandable_item, parent, false);
-        return new MyViewHolder2(itemView);
+        return new ViewHolder2(itemView);
     }
 
     // Replace the contents of parent views-items (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder2 holder, int position) {
+    public void onBindViewHolder(ViewHolder2 holder, int position) {
         ExtendableItem story = allStoriesList.get(position);
         holder.parentName.setText(story.getParent());
         int noOfChildTextViews = holder.childLayout.getChildCount();
@@ -131,7 +131,7 @@ public class MyRecyclerViewAdapter2 extends RecyclerView.Adapter<MyRecyclerViewA
         FireStoreW.readStory(view.getId(), new FireStoreW.FirestoreCallback3(){
             @Override
             public void onCallBack3(List<StoriesGS> list) {
-                Book.setMyStory(list.get(0));
+                Book.setTheStory(list.get(0));
                 Intent intent = new Intent(context, Book.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 context.startActivity(intent);
