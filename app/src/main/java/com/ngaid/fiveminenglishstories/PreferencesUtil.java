@@ -6,14 +6,14 @@ import android.preference.PreferenceManager;
 
 public class PreferencesUtil {
 
-    public static void setPrefSize(final Context context, final Float s) {
+    public static void setPrefSize(final Context context, final int s) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        sharedPref.edit().putFloat(context.getString(R.string.font_size), s).commit();
+        sharedPref.edit().putInt(context.getString(R.string.font_size), s).commit();
     }
 
-    public static float getPrefSize(final Context context) {
+    public static int getPrefSize(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getFloat(context.getString(R.string.font_size), 18);
+        return sharedPref.getInt(context.getString(R.string.font_size), (int) 18);
     }
 
     public static void setPrefFont(final Context context, final String f) {
@@ -23,7 +23,7 @@ public class PreferencesUtil {
 
     public static String getPrefFont(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getString(context.getString(R.string.font_name), "open_sans.ttf");
+        return sharedPref.getString(context.getString(R.string.font_name), (String) "open_sans.ttf");
     }
 
     public static void setPrefColour(final Context context, final boolean mode) {
@@ -43,7 +43,7 @@ public class PreferencesUtil {
 
     public static String getPrefColCoordinator(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getString(context.getString(R.string.coordinatorColour), "#FCFCE9");
+        return sharedPref.getString(context.getString(R.string.coordinatorColour), (String) "#FCFCE9");
     }
 
     public static void setPrefColText(final Context context, final String ct) {
@@ -53,6 +53,6 @@ public class PreferencesUtil {
 
     public static String getPrefColText(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getString(context.getString(R.string.textColour), "#000000");
+        return sharedPref.getString(context.getString(R.string.textColour), (String) "#000000");
     }
 }

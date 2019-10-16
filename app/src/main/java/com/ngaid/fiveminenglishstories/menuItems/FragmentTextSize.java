@@ -13,7 +13,7 @@ import com.ngaid.fiveminenglishstories.PreferencesUtil;
 import com.ngaid.fiveminenglishstories.R;
 
 public class FragmentTextSize extends DialogFragment {
-    private Float s;
+    private Integer s;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class FragmentTextSize extends DialogFragment {
                 .setSingleChoiceItems(getResources().getStringArray(R.array.sizes), -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        s = Float.valueOf(getResources().getStringArray(R.array.sizes)[i]);
+                        s = Integer.valueOf(getResources().getStringArray(R.array.sizes)[i]);
                     }
                 })
                 .setPositiveButton("CHOOSE", new DialogInterface.OnClickListener() {

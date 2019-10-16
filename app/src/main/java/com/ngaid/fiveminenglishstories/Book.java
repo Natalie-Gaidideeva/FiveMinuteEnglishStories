@@ -97,7 +97,7 @@ public class Book extends BaseActivity implements View.OnClickListener{
         }
     }
 
-    public static void setBookSize(Float s){
+    public static void setBookSize(int s){
         if (context!=null) {
             textBook.setTextSize(s);
         }

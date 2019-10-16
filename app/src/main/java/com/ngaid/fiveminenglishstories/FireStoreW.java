@@ -65,8 +65,10 @@ public class FireStoreW {
                                 if (storiesDescriptions2.size()==0){
                                     ArrayList<StoriesGS> l = new ArrayList<>();
                                     l.add(storyDescription);
+                                    ArrayList<StoriesGS> l2 = new ArrayList<>();
+                                    l2.add(storyDescription);
                                     ExtendableItem extendableItem = new ExtendableItem(storyDescription.getAuthor(), l);
-                                    ExtendableItem extendableItem1 = new ExtendableItem(storyDescription.getGenre(), l);
+                                    ExtendableItem extendableItem1 = new ExtendableItem(storyDescription.getGenre(), l2);
                                     storiesDescriptions2.add(extendableItem);
                                     storiesDescriptions3.add(extendableItem1);
                                 }
