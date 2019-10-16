@@ -106,15 +106,15 @@ public class BaseActivity extends AppCompatActivity {
                         break;
                     case R.id.menu_item_two:    //set day/night mode
                         if (!PreferencesUtil.getPrefColour(context)){
-                            PreferencesUtil.setPrefColCoordinator(context, "#333333");
-                            PreferencesUtil.setPrefColText(context, "#FFFFFF");
+                            PreferencesUtil.setPrefColCoordinator(context, context.getResources().getString(0 + R.color.nightMode));
+                            PreferencesUtil.setPrefColText(context, context.getResources().getString(0 + R.color.white));
                             Book.setColours();
                             PreferencesUtil.setPrefColour(context, true);
                             Toast.makeText(context, "NIGHT MODE", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            PreferencesUtil.setPrefColCoordinator(context, "#fcfce9");
-                            PreferencesUtil.setPrefColText(context, "#000000");
+                            PreferencesUtil.setPrefColCoordinator(context, context.getResources().getString(0 + R.color.parchment));
+                            PreferencesUtil.setPrefColText(context, context.getResources().getString(0 + R.color.black));
                             Book.setColours();
                             PreferencesUtil.setPrefColour(context, false);
                             Toast.makeText(context, "DAY MODE", Toast.LENGTH_SHORT).show();

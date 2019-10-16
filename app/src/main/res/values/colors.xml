@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="parchment">#FCFCE9</color>
+    <color name="nightMode">#333333</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="upperToolbar">#761A03</color>
+    <color name="lowerTabs">#ab6650</color>
+    <color name="stressedTabs">#4A000000</color>
+    <color name="blackish">#272727</color>
 </resources>

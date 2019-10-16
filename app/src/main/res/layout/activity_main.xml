@@ -20,7 +20,7 @@
         android:id="@+id/linearMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FCFCE9"
+        android:background="@color/parchment"
         android:orientation="vertical">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -38,7 +38,7 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="#761A03"
+                    android:background="@color/upperToolbar"
                     app:popupTheme="@style/AppTheme.PopupOverlay"
                     app:title="@string/app_name">
 
@@ -55,12 +55,12 @@
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ab6650"
+                android:background="@color/lowerTabs"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="#4A000000"
+                app:tabIndicatorColor="@color/stressedTabs"
                 app:tabMode="fixed"
                 app:tabTextAppearance="@style/TabTextSize"
-                app:tabTextColor="#FFFFFF" />
+                app:tabTextColor="@color/white" />
         </androidx.viewpager.widget.ViewPager>
 
     </LinearLayout>
@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#FCFCE9"
+        android:background="@color/parchment"
         android:fitsSystemWindows="true"
         app:menu="@menu/drawer_menu"
         app:itemTextAppearance="?android:attr/textAppearanceMedium" />

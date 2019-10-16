@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:layout_marginBottom="5dp"
-        android:textColor="#000000">
+        android:textColor="@color/black">
     </TextView>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:textColor="#272727"
+            android:textColor="@color/blackish"
             android:textSize="15sp">
         </TextView>
         <TextView
@@ -41,7 +41,7 @@
             android:layout_alignParentRight="true"
             android:textAlignment="viewEnd"
             android:gravity="end"
-            android:textColor="#272727"
+            android:textColor="@color/blackish"
             android:textSize="15sp">
         </TextView>
     </RelativeLayout>

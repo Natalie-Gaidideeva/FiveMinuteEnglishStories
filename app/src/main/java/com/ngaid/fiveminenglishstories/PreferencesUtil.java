@@ -43,7 +43,7 @@ public class PreferencesUtil {
 
     public static String getPrefColCoordinator(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getString(context.getString(R.string.coordinatorColour), (String) "#FCFCE9");
+        return sharedPref.getString(context.getString(R.string.coordinatorColour), (String) context.getResources().getString(0 + R.color.parchment));
     }
 
     public static void setPrefColText(final Context context, final String ct) {
@@ -53,6 +53,6 @@ public class PreferencesUtil {
 
     public static String getPrefColText(final Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getString(context.getString(R.string.textColour), (String) "#000000");
+        return sharedPref.getString(context.getString(R.string.textColour), (String) context.getResources().getString(0 + R.color.black));
     }
 }
