@@ -23,19 +23,16 @@ import com.ngaid.fiveminenglishstories.objects.StoriesGS;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapterExpandable extends RecyclerView.Adapter<RecyclerViewAdapterExpandable.ViewHolder2> implements View.OnClickListener {
+public abstract class RecyclerViewAdapterExpandable extends RecyclerView.Adapter<RecyclerViewAdapterExpandable.ViewHolder2> implements View.OnClickListener {
     // makes tree-list with expandable items
 
-    private ArrayList<ExtendableItem> allStoriesList;
     final String LOG_TAG = "myLogs";
-    private Context context;
-    private boolean ifAuthors;
+    protected TextView currentTextView;
+    protected StoriesGS currentStory;
+    protected ArrayList<ExtendableItem> allStoriesList;
+    protected Context context;
 
-    public RecyclerViewAdapterExpandable(ArrayList<ExtendableItem> allStoriesList, Context context, boolean ifAuthors) {
-        this.ifAuthors = ifAuthors;
-        this.allStoriesList = allStoriesList;
-        this.context = context;
-    }
+    public RecyclerViewAdapterExpandable(){}
 
     public class ViewHolder2 extends RecyclerView.ViewHolder implements View.OnClickListener {
         private Context context;
@@ -110,27 +107,24 @@ public class RecyclerViewAdapterExpandable extends RecyclerView.Adapter<Recycler
             }
         }
         for (int textViewIndex = 0; textViewIndex < noOfChild; textViewIndex++) {
-            TextView currentTextView = (TextView) holder.childLayout.getChildAt(textViewIndex);
-            StoriesGS st = (StoriesGS) story.getChild().get(textViewIndex);
-            if (ifAuthors){
-                currentTextView.setText(st.getTitle() + "\n" + st.getGenre());
-            }
-            else {
-                currentTextView.setText(st.getTitle() + "\n" + st.getAuthor());
-            }
-            currentTextView.setId(st.getFBKey());
+            currentTextView = (TextView) holder.childLayout.getChildAt(textViewIndex);
+            currentStory = (StoriesGS) story.getChild().get(textViewIndex);
+            setAdditionalField();
+            currentTextView.setId(currentStory.getFBKey());
             currentTextView.setOnClickListener(this);
         }
 
     }
 
+    public abstract void setAdditionalField();
+
     @Override
     public void onClick(View view) {    // listener for children-items getting story from db
         Log.d(LOG_TAG, "itemN:" + view.getId());
 
-        FireStoreW.readStory(view.getId(), new FireStoreW.FirestoreCallback3(){
+        FireStoreW.setStory(view.getId(), new FireStoreW.FirestoreCallback2(){
             @Override
-            public void onCallBack3(List<StoriesGS> list) {
+            public void onCallBack2(List<StoriesGS> list) {
                 Book.setTheStory(list.get(0));
                 Intent intent = new Intent(context, Book.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -140,13 +134,13 @@ public class RecyclerViewAdapterExpandable extends RecyclerView.Adapter<Recycler
     }
 
     @Override
-    public int getItemCount() {
-        return allStoriesList.size();
+    public long getItemId(int position){
+        return position;
     }
 
     @Override
-    public long getItemId(int position){
-        return position;
+    public int getItemCount() {
+        return allStoriesList.size();
     }
 }
 

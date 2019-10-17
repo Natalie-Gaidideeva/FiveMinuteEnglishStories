@@ -93,9 +93,9 @@ public class BaseActivity extends AppCompatActivity {
                     case R.id.menu_item_one:    //get random story
                         Random ran = new Random();
                         int x = ran.nextInt(FireStoreW.getQ()) + 1;
-                        FireStoreW.readStory(x, new FireStoreW.FirestoreCallback3(){
+                        FireStoreW.setStory(x, new FireStoreW.FirestoreCallback2(){
                             @Override
-                            public void onCallBack3(List<StoriesGS> list) {
+                            public void onCallBack2(List<StoriesGS> list) {
                                 Book.setTheStory(list.get(0));
                                 Intent intent = new Intent(context, Book.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

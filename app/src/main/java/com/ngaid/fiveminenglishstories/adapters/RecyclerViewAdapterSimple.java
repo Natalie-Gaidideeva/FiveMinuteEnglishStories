@@ -64,9 +64,9 @@ public class RecyclerViewAdapterSimple extends RecyclerView.Adapter<RecyclerView
     public void onClick(View view) {    // listener for items, getting story from db
         Log.d(LOG_TAG, "itemN:" + view.getId());
 
-        FireStoreW.readStory(view.getId(), new FireStoreW.FirestoreCallback3(){
+        FireStoreW.setStory(view.getId(), new FireStoreW.FirestoreCallback2(){
             @Override
-            public void onCallBack3(List<StoriesGS> list) {
+            public void onCallBack2(List<StoriesGS> list) {
                 Book.setTheStory(list.get(0));
                 Intent intent = new Intent(context, Book.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
