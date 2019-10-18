@@ -12,6 +12,7 @@ import static junit.framework.TestCase.assertEquals;
 
 public class ModePreferencesSavingAndReadingTest {
 
+    //tests DefaultSharedPreferences
     @Test
     public void modeChange() throws Exception {
         Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
