@@ -1,21 +1,23 @@
 package com.ngaid.fiveminenglishstories.objects;
 
 public class StoriesGS {
-    private String title, author, genre, story;
+    private String title, author, genre, story, minutesAmount;
     private int key;
 
     public StoriesGS() {
         this.title = "";
         this.author = "";
         this.genre = "";
+        this.minutesAmount = "";
         this.key = 0;
     }
 
-    public StoriesGS(String title, String author, String genre, int key) {
+    public StoriesGS(String title, String author, String genre, int key, String minutesAmount) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.key = key;
+        this.minutesAmount = minutesAmount;
     }
 
     public StoriesGS(String title, String author, String genre, String story) {
@@ -63,5 +65,13 @@ public class StoriesGS {
 
     public void setStory(String story) {
         this.story = story;
+    }
+
+    public String getMinutesAmount() {
+        return minutesAmount;
+    }
+
+    public void setMinutesAmount(String minutesAmount) {
+        this.minutesAmount = minutesAmount;
     }
 }

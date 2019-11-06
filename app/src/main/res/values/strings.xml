@@ -4,6 +4,7 @@
         <item>ALL</item>
         <item>AUTHORS</item>
         <item>GENRES</item>
+        <item>READING TIME</item>
     </string-array>
     <string name="navigation_drawer_open">Drawer opened</string>
     <string name="navigation_drawer_close">Drawer closed</string>

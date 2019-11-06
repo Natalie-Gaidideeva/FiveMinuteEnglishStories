@@ -20,6 +20,7 @@ public class Tab2Authors extends Tab {
             }
             public void onCallBack(List<StoriesGS> list){}
             public void onCallBackB(ArrayList<ExtendableItem> listB){}
+            public void onCallBackC(ArrayList<ExtendableItem> listC){}
         });
     }
 }

@@ -20,6 +20,7 @@ public class Tab1All extends Tab {
             }
             public void onCallBackA(ArrayList<ExtendableItem> listA) {}
             public void onCallBackB(ArrayList<ExtendableItem> listB){}
+            public void onCallBackC(ArrayList<ExtendableItem> listC){}
         });
     }
 }

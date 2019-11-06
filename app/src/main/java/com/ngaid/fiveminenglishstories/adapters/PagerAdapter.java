@@ -10,6 +10,7 @@ import com.ngaid.fiveminenglishstories.R;
 import com.ngaid.fiveminenglishstories.tabs.Tab1All;
 import com.ngaid.fiveminenglishstories.tabs.Tab2Authors;
 import com.ngaid.fiveminenglishstories.tabs.Tab3Genres;
+import com.ngaid.fiveminenglishstories.tabs.Tab4ReadingTime;
 
 public class PagerAdapter extends FragmentPagerAdapter {
     private Context context;
@@ -40,6 +41,9 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 2:
                 Tab3Genres tab3 = new Tab3Genres();
                 return tab3;
+            case 3:
+                Tab4ReadingTime tab4 = new Tab4ReadingTime();
+                return tab4;
             default:
                 return null;
         }
@@ -47,6 +51,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

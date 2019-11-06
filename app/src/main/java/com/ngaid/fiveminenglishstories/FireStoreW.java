@@ -37,6 +37,7 @@ public class FireStoreW {
         void onCallBack(List<StoriesGS> list);
         void onCallBackA(ArrayList<ExtendableItem> listA);
         void onCallBackB(ArrayList<ExtendableItem> listB);
+        void onCallBackC(ArrayList<ExtendableItem> listC);
     }
 
     public interface FirestoreCallback2{
@@ -47,6 +48,7 @@ public class FireStoreW {
         final List<StoriesGS> storiesDescriptions = new ArrayList<>();
         final ArrayList<ExtendableItem> storiesDescriptions2 = new ArrayList<>();
         final ArrayList<ExtendableItem> storiesDescriptions3 = new ArrayList<>();
+        final ArrayList<ExtendableItem> storiesDescriptions4 = new ArrayList<>();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("stories")
                 .orderBy("date", Query.Direction.DESCENDING)
@@ -56,18 +58,34 @@ public class FireStoreW {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot document : task.getResult()) {
+                                long amountOfWords = (long) document.get("words");
+                                String amountOfMinutes;
+                                if(amountOfWords<=600){
+                                    amountOfMinutes = "less than 3 minutes";
+                                }
+                                else if(600<amountOfWords && amountOfWords<=1000){
+                                    amountOfMinutes = "3-5 minutes";
+                                }
+                                else if(1000<amountOfWords && amountOfWords<=1400){
+                                    amountOfMinutes = "5-7 minutes";
+                                }
+                                else{
+                                    amountOfMinutes = "more than 7 minutes";
+                                }
                                 StoriesGS storyDescription = new StoriesGS(document.get("title").toString(),
                                         document.get("author").toString(), document.get("genre").toString(),
-                                        Integer.parseInt(document.getId()));
+                                        Integer.parseInt(document.getId()), amountOfMinutes);
                                 storiesDescriptions.add(storyDescription);
                                 // building collection for expandable lists
                                 if (storiesDescriptions2.size()==0){
                                     makeFirstItem(storyDescription, storyDescription.getAuthor(), storiesDescriptions2);
                                     makeFirstItem(storyDescription, storyDescription.getGenre(), storiesDescriptions3);
+                                    makeFirstItem(storyDescription, storyDescription.getMinutesAmount(), storiesDescriptions4);
                                 }
                                 else {
                                     makeOtherItems(storyDescription, storyDescription.getAuthor(), storiesDescriptions2);
                                     makeOtherItems(storyDescription, storyDescription.getGenre(), storiesDescriptions3);
+                                    makeOtherItems(storyDescription, storyDescription.getMinutesAmount(), storiesDescriptions4);
                                 }
 
                                 Log.d(LOG_TAG, storyDescription.getTitle() + storyDescription.getFBKey());
@@ -76,6 +94,7 @@ public class FireStoreW {
                             firestoreCallback.onCallBack(storiesDescriptions);
                             firestoreCallback.onCallBackA(storiesDescriptions2);
                             firestoreCallback.onCallBackB(storiesDescriptions3);
+                            firestoreCallback.onCallBackC(storiesDescriptions4);
                             setQ(storiesDescriptions.size());
                         }
                     }
